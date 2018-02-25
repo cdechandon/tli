@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--Page HTML qui gere l'affichage de la page "Utilisateur", ici il pourra voir ses infos personnels et les modifier-->
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <title>My Account</title>
+
+  
+    </head>
+
+        
+
+    <body>
+
+        <h1>Mes Informations :</h1>
+<!-- Obliger d'inserer code php pour afficher les variables utiles-->
+        <ul>
+  		<li>Nom : <?php echo($resultat['Nom']);?></li>
+  		<li>Prenom : <?php echo($resultat['Prenom']);?></li>
+  		<li>Pseudo : <?php echo($_SESSION['pseudo']);?></li>
+  		<li>Adresse email : <?php echo($resultat['mail']);?></li>
+	</ul>
+	<p> Vous pouvez modifiez des informations si vous le souhaitez en:
+		<ul>
+			<li>Changeant dans le formulaire les informations</li>
+			<li>Ou alors ne rien toucher</li>
+		</ul>
+	</p>
+	<form action="../php/ModificationAccount.php" method="post">
+
+<p>
+
+	<input type="text" name="nom" value= <?php echo($resultat['Nom']);?> /><br/>
+	<input type="text" name="prenom" value=<?php echo($resultat['Prenom']);?> /><br/>
+	<input type="text" name="pseudo" value=<?php echo($_SESSION['pseudo']);?> /><br/>
+	<input type="text" name="mail" value=<?php echo($resultat['mail']);?> /><br/>
+	
+
+    <input type="submit" value="Valider" />
+<!-- TODO: Gerer un espace modification mot de passe, On ne peut le faire de la meme maniere que ci dessus car le mdp est hachee-->
+
+</p>
+
+</form>
+
+ 
+
+        
+
+        
+
+    </body>
+
+</html>
