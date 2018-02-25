@@ -13,8 +13,8 @@ echo 'pas connecter';
 }
 
 
-
-
+require('model.php');
+$req = getNews();
 require('../html/pageAcceuil.html');// on affiche la page html d'acceuil
 
 ?>

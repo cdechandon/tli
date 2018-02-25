@@ -76,7 +76,19 @@ $req->execute(array(
 
 }
 
+function getNews()
 
+{
+
+$bdd=connexionDB();
+
+
+$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM news ORDER BY date DESC LIMIT 0, 5');
+
+
+    return $req;
+
+}
 
 
 ?>

@@ -35,9 +35,52 @@
              
     </form>
     </div>
-    <div id"infoConjoncturelles" position="center">
+    <!--<div id="infoConjoncturelles" position="center">-->
       <p>News</p>
-    </div>
+	<?php
+
+        while ($donnees = $req->fetch())
+
+        {
+
+        ?>
+
+        <div class="news">
+
+            <h3>
+
+                <?php echo htmlspecialchars($donnees['titre']); ?>
+
+                <em>le <?php echo $donnees['date_creation_fr']; ?></em>
+
+            </h3>
+
+            
+
+            <p>
+
+            <?php
+
+            echo nl2br(htmlspecialchars($donnees['contenu']));
+
+            ?>
+
+            <br />
+
+            <em><a href="#">Commentaires</a></em>
+
+            </p>
+
+        </div>
+
+        <?php
+
+        }
+
+        $req->closeCursor();
+
+        ?>
+
 	<a href="../php/Deconnexion.php">Cliquez ici pour vous deconnecter</a><!-- Page php permettant a l'utilisateur de se deconnecter et de detruire la session-->
     </body>
 </html>
