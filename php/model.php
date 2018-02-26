@@ -90,6 +90,37 @@ $req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date, \'%d/%m/%Y à %
 
 }
 
+function PseudoExist($pseudo){
+echo $pseudo;
+$bdd=connexionDB();
+$req = $bdd->prepare('SELECT id FROM InfoClient WHERE pseudo = :pseudo');
+$req->execute(array(
+
+    'pseudo' => $pseudo));
+
+if($req->fetch()){
+	return TRUE;
+}
+else{
+	return FALSE;
+}
+}
+
+function MailExist($mail){
+echo $mail;
+$bdd=connexionDB();
+$req = $bdd->prepare('SELECT id FROM InfoClient WHERE mail = :mail');
+$req->execute(array(
+
+    'mail' => $mail));
+
+if($req->fetch()){
+	return TRUE;
+}
+else{
+	return FALSE;
+}
+}
 
 ?>
 
