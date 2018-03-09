@@ -9,7 +9,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 
 }
 else {
-	require('IndexRedirection.php');
+	require('RedirectionMyAccount.php');
 }
 
 ?>

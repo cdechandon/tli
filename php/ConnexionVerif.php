@@ -1,6 +1,8 @@
 <?php 
 //Page php permettant de verifier l'existance du compte et la validite du MDP
-require('model.php');
+//require('model.php');
+require('inscriptionCheck.php');
+
 $pseudo=$_POST['pseudo'];// recupere les variables de la methode POST
 $mdp=$_POST['mdp'];
 $resultsFinal=connexionWebsite($pseudo,$mdp);
@@ -25,8 +27,7 @@ else
         $_SESSION['id'] = $resultsFinal[0]['id'];// celle-ci contient l'id dans le base de donnee(unique)
 
         $_SESSION['pseudo'] = $pseudo;// On lui donne aussi le pseudo de l'utilisateur
-
-        echo 'Vous êtes connecté !';
+	require('IndexAccueil.php');
 
     }
 

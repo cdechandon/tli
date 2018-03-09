@@ -60,7 +60,6 @@ return $resultat;
 
 function modificationInfoCustumers($nom,$prenom,$mail,$pseudo,$id){// permet de modifier les informations sur un client a partir de son id (sauf mot de passe)
 $bdd=connexionDB();
-echo $nom,$prenom,$mail,$pseudo,$id;
 $req = $bdd->prepare('UPDATE InfoClient SET Nom = :Nom, Prenom =:Prenom ,mail = :mail,pseudo = :pseudo WHERE id = :id');
 $req->execute(array(
 
@@ -75,6 +74,8 @@ $req->execute(array(
 
 
 }
+
+
 
 function getNews()
 
@@ -91,7 +92,7 @@ $req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date, \'%d/%m/%Y à %
 }
 
 function PseudoExist($pseudo){
-echo $pseudo;
+
 $bdd=connexionDB();
 $req = $bdd->prepare('SELECT id FROM InfoClient WHERE pseudo = :pseudo');
 $req->execute(array(
@@ -107,7 +108,6 @@ else{
 }
 
 function MailExist($mail){
-echo $mail;
 $bdd=connexionDB();
 $req = $bdd->prepare('SELECT id FROM InfoClient WHERE mail = :mail');
 $req->execute(array(
@@ -120,6 +120,43 @@ if($req->fetch()){
 else{
 	return FALSE;
 }
+
+
+}
+
+function GetPassword($pseudo){
+$bdd = connexionDB();
+$req = $bdd->prepare('SELECT password FROM InfoClient WHERE pseudo = :pseudo');
+
+$req->execute(array(
+
+    'pseudo' => $pseudo));
+
+$resultat = $req->fetch();
+return $resultat;
+}
+
+
+function PasswordModification($pseudo,$oldPassword,$newPassword){
+$bdd = connexionDB();
+$req=GetPassword($pseudo);
+$realPw=$req['password'];
+$mdpChange=FALSE;
+if (password_verify($oldPassword, $realPw)){
+	$req = $bdd->prepare('UPDATE InfoClient SET password = :password WHERE pseudo = :pseudo');
+	$req->execute(array(
+
+    	'pseudo' => $pseudo,    
+   	'password' => $newPassword,
+
+    ));
+	return !$mdpChange;
+}
+else{
+return $mdpChange;
+}
+
+
 }
 
 ?>

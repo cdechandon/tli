@@ -18,10 +18,10 @@
         <h1>Mes Informations :</h1>
 <!-- Obliger d'inserer code php pour afficher les variables utiles-->
         <ul>
-  		<li>Nom : <?php echo($resultat['Nom']);?></li>
-  		<li>Prenom : <?php echo($resultat['Prenom']);?></li>
-  		<li>Pseudo : <?php echo($_SESSION['pseudo']);?></li>
-  		<li>Adresse email : <?php echo($resultat['mail']);?></li>
+  		<li>Nom : {$Name}</li>
+  		<li>Prenom : {$FName}</li>
+  		<li>Pseudo : {$Pseudo}</li>
+  		<li>Adresse email : {$Mail}</li>
 	</ul>
 	<p> Vous pouvez modifiez des informations si vous le souhaitez en:
 		<ul>
@@ -29,14 +29,32 @@
 			<li>Ou alors ne rien toucher</li>
 		</ul>
 	</p>
-	<form action="../php/ModificationAccount.php" method="post">
+	<form action="../php/ModificationAccountGeneral.php" method="post">
 
 <p>
+	Votre Nom:
+	<input type="text" name="nom" value= {$Name} />{$InfoName}<br/>
+	Votre Prenom:
+	<input type="text" name="prenom" value={$FName} />{$InfoFName}<br/>
+	Votre Pseudo:
+	<input type="text" name="pseudo" value={$Pseudo} />{$InfoPseudo}<br/>
+	Votre mail:
+	<input type="text" name="mail" value={$Mail} />{$InfoMail}<br/>
+	
 
-	<input type="text" name="nom" value= <?php echo($resultat['Nom']);?> /><br/>
-	<input type="text" name="prenom" value=<?php echo($resultat['Prenom']);?> /><br/>
-	<input type="text" name="pseudo" value=<?php echo($_SESSION['pseudo']);?> /><br/>
-	<input type="text" name="mail" value=<?php echo($resultat['mail']);?> /><br/>
+    <input type="submit" value="Valider" />
+<!-- TODO: Gerer un espace modification mot de passe, On ne peut le faire de la meme maniere que ci dessus car le mdp est hachee-->
+
+</p>
+
+</form>
+<form action="../php/ModificationAccountPassword.php" method="post">
+
+<p>
+	Ancien mot de passe:
+	<input type="password" name="ancienmdp" placeholder= "Ancien mot de passe" />{$InfoPassword}<br/>
+	Nouveau mot de passe:
+	<input type="password" name="nouveauMdp" placeholder= "Nouveau mot de passe" /><br/>
 	
 
     <input type="submit" value="Valider" />
@@ -46,7 +64,8 @@
 
 </form>
 
- 
+ <p><a href="../php/IndexAccueil.php">Acceuil</a><!-- Retour a l'accueil-->
+</p>
 
         
 

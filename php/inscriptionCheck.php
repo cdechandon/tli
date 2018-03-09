@@ -11,11 +11,16 @@ class Compte
     function __construct($pseu, $mdp,$mail,$nom,$prenom)
     {
         $this->_pseudo = $pseu;
-        $this->_password = $mdp;
+        if(isset($mdp)){
+		$this->_password = $mdp;}
+	else{
+		$this->_password ="";
+	}
 	$this->_mail = $mail;
 	$this->_nom = $nom;
 	$this->_prenom = $prenom;
     }
+
 
 	public function verifNom(){
 	$verif=false;
@@ -57,6 +62,19 @@ class Compte
 	}
 
 }
+public function verifModifPseudo(){
+	$verif=false;
+	if($this->_pseudo==NULL|!PseudoExist($this->_pseudo)){
+		
+	return $verif;
+	}
+	else
+	{
+		$verif=true;
+		return $verif;
+	}
+
+}
 	public function verifMail(){
 	$verif=false;
 	if(!filter_var($this->_mail, FILTER_VALIDATE_EMAIL)&!MailExist($this->_mail)){
@@ -72,9 +90,9 @@ class Compte
 	}
 
 }
-	public function verifMdp(){
+	public function verifPassword(){
 	$verif=false;
-	if($this->_password==NULL){
+	if($this->_password==NULL|strlen($this->_password)<7){
 		
 	return $verif;
 	}

@@ -8,13 +8,18 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))// on indique a l'util
     echo 'Bonjour ' . $_SESSION['pseudo'];
 
 }
-else {
-echo 'pas connecter';
-}
 
 
-require('model.php');
-$req = getNews();
-require('../html/pageAcceuil.html');// on affiche la page html d'acceuil
+
+require_once('model.php');
+require("smartyLibs/Smarty.class.php");
+$tpl = new Smarty();
+
+
+$tpl->display('../html/pageAcceuil.html');// on affiche la page html d'acceuil
+
+
+  
+
 
 ?>

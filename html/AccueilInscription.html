@@ -7,25 +7,28 @@
 <html>
 <p>
 
-    Veuillez rentrez le champ<br />
+    Veuillez rentrez les champs ci-dessous pour vous inscrire<br />
 
     Veuillez taper :
 
 </p>
 
 <!-- Formulaire d'inscription-->
-<form action="../php/inscription1.php" method="post">
+<form action="../php/VerifInscription.php" method="post">
 
 <p>
 
-	<input type="text" name="nom" placeholder="Rentrez votre nom" /><br/>
-	<input type="text" name="prenom" placeholder="Rentrez votre prenom" /><br/>
-	<input type="text" name="pseudo" placeholder="Rentrez votre pseudo" /><br/>
-	<input type="text" name="mail" placeholder="Rentrez votre adresse mail"/><br/>
-	<input type="password" name="password" placeholder="Mot de passe"/><br/>
+	<input type="text" name="nom" placeholder="Rentrez votre nom" />{$InfoName}<br/>
+	<input type="text" name="prenom" placeholder="Rentrez votre prenom" />{$InfoFName}<br/>
+	<input type="text" name="pseudo" placeholder="Rentrez votre pseudo" />{$InfoPseudo}<br/>
+	<input type="text" name="mail" placeholder="Rentrez votre adresse mail"/>{$InfoMail}<br/>
+	<input type="password" name="password" placeholder="Mot de passe"/>{$InfoPassword}<br/>
 
     <input type="submit" value="Valider" />
 
+</p>
+
+<p><a href="../php/IndexAccueil.php">Acceuil</a><!-- Retour a l'accueil-->
 </p>
 
 </form>

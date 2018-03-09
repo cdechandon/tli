@@ -1,12 +1,11 @@
--- READ ME : Creer une base de donnee TLI ou alors modifier ici le nom de la base de donnee
 -- phpMyAdmin SQL Dump
--- version 4.7.6
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 16 fév. 2018 à 14:15
--- Version du serveur :  10.1.29-MariaDB
--- Version de PHP :  7.2.0
+-- Généré le :  ven. 09 mars 2018 à 14:21
+-- Version du serveur :  10.1.30-MariaDB
+-- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,8 +42,9 @@ CREATE TABLE `InfoClient` (
 --
 
 INSERT INTO `InfoClient` (`id`, `Nom`, `Prenom`, `mail`, `pseudo`, `password`) VALUES
-(1, 'Admin', 'istrateur', 'admin@hotmail.fr', 'administrator', 'admin'),
-(6, 'Bart', 'Tit', 'titbgdu69@gmail.com', 'titbgdu69', 'titbgdu69');
+(0, 'testcrypt', 'testcrypt1', 'coucou@gmail.com', 'testcrypt', '$2y$10$BkhkZFSflmabgagqobevVe7xkFLB63GMmqHRlTI4tGdTCLpf0yoC6'),
+(8, 'sangoku', 'valou', 'rahiti@hotmail.fr', 'rahiti', '$2y$10$1Fzr3UMn7eLYOJR9kUHpteWIi0hU41UJ6GseXtinzkW9uW7Ee.kBK'),
+(11, 'Andrieux', 'Seraphin', 'craf@gmail.fr', 'craf83', '$2y$10$7fo7w0S9oV2i6.JRxr.qPexfvbOdhLZyDMjyjlgjL3dVayjoZWHw2');
 
 --
 -- Index pour les tables déchargées
@@ -64,7 +64,7 @@ ALTER TABLE `InfoClient`
 -- AUTO_INCREMENT pour la table `InfoClient`
 --
 ALTER TABLE `InfoClient`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
