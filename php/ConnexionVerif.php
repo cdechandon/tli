@@ -20,7 +20,7 @@ else
 
 {
 
-    if ($resultsFinal[1]) {// $resultsFinal[1] contient true si le mdp indiquee est le meme que celui stocker
+    if ($resultsFinal[1]) {// $resultsFinal[1] contient true si le mdp indiquee est le meme que celui stocké
 
         session_start();// ouverture d'une session
 
