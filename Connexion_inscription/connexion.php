@@ -14,7 +14,7 @@
 </p>
 
 
-<form action="verification.php" method="post"> <!-- on envoie via le formulaire le pseudo et le mot de passe , par default les valeur ne s'efface pas en cliquant => a faire-->
+<form action="verification.php" method="post"> <!-- on envoie via le formulaire le pseudo et le mot de passe , par default les valeurs ne s'effacent pas en cliquant => a faire-->
 
 <p>
 	<input type="text" name="pseudo" value="Rentrez votre pseudo" /><br/>
