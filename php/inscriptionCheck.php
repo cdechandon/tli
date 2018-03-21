@@ -63,29 +63,20 @@ class Compte
 
 }
 public function verifModifPseudo(){
-	$verif=false;
-	if($this->_pseudo==NULL|!PseudoExist($this->_pseudo)){
 		
-	return $verif;
-	}
-	else
-	{
-		$verif=true;
-		return $verif;
-	}
+	return !PseudoExist($this->_pseudo);
+	
 
 }
 	public function verifMail(){
-	$verif=false;
-	if(!filter_var($this->_mail, FILTER_VALIDATE_EMAIL)&!MailExist($this->_mail)){
+	if(filter_var($this->_mail, FILTER_VALIDATE_EMAIL) and !MailExist($this->_mail)){
 		
-	return $verif;
+	return true;
 	}
 	else
 	{
 		
-			$verif=true;
-			return $verif;
+			return false;
 		
 	}
 

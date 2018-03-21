@@ -4,8 +4,8 @@ session_start();
 require('model.php');
 // on recupere toutes les donnees modifiees ou non et on les reinitialise dans le base de donnee
 
-	$oldPassword=$_POST['ancienmdp'];
-	$newPassword=$_POST['nouveauMdp'];
+	$oldPassword=$_POST['pwd1'];
+	$newPassword=$_POST['pwd2'];
 
 if(isset($oldPassword)&isset($newPassword)){
 if(strlen($newPassword)>=7){
