@@ -2,8 +2,7 @@
 <html lang="en-EN">
     <head>
         <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="impression.css" media="print">
-    <link href="pageAcceuil.css" rel="stylesheet" type="text/css"/ media="screen">
+    <link href="pageAcceuil.css" rel="stylesheet" type="text/css"/>
         <title>Home Page</title>
     </head>
 
@@ -16,12 +15,12 @@
               <ul id="menuHorizontal" style="Brush Script Std, Brush Script MT, cursive"/>
             <li class= "boutonGauche"><a href="#">Pathologies</a></li>
             <li class= "boutonGauche"><a href="#">Search</a></li>
-            <li class= "boutonGauche"><a href="../php/myAccount.php">Your account</a></li>
+            <li class= "boutonGauche"><a href="../php/Index.php?action=monCompte">Your account</a></li>
             <li class= "boutonGauche"><a href="#">Who are we?</a></li>
       </ul>
          </div>   
          <div class="BlocIdentifiant">
-	<form action="ConnexionVerif.php" method="post"><!-- ConnexionVerif.php permet d'etablir une connexion et creer une session-->
+	<form action="../php/Index.php?action=verifConnection" method="post"><!-- ConnexionVerif.php permet d'etablir une connexion et creer une session-->
       <br>
       <!--Formulaire Identification -->
 
@@ -37,53 +36,11 @@
     </form>
     </div>
 <h3>Inscription</h3>
-<p>Pas encore inscrit? Cliquez <a href="../php/IndexInscription.php">ici</a></p>
+<p>Pas encore inscrit? Cliquez <a href="../php/Index.php?action=inscription">ici</a></p>
     <!--<div id="infoConjoncturelles" position="center">-->
       <p>News</p>
-	<?php
+	
 
-        while ($donnees = $req->fetch())
-
-        {
-
-        ?>
-
-        <div class="news">
-
-            <h3>
-
-                <?php echo htmlspecialchars($donnees['titre']); ?>
-
-                <em>le <?php echo $donnees['date_creation_fr']; ?></em>
-
-            </h3>
-
-            
-
-            <p>
-
-            <?php
-
-            echo nl2br(htmlspecialchars($donnees['contenu']));
-
-            ?>
-
-            <br />
-
-            <em><a href="#">Commentaires</a></em>
-
-            </p>
-
-        </div>
-
-        <?php
-
-        }
-
-        $req->closeCursor();
-
-        ?>
-
-	<a href="../php/Deconnexion.php">Cliquez ici pour vous deconnecter</a><!-- Page php permettant a l'utilisateur de se deconnecter et de detruire la session-->
+	<a href="../php/Index.php?action=deconnexion">Cliquez ici pour vous deconnecter</a><!-- Page php permettant a l'utilisateur de se deconnecter et de detruire la session-->
     </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
-
-require('model.php');
+//Controller .php sert de redirection vers les bonnes pages .php, cela permet de rajouter une securite grace a ce routeur.
+require_once('model.php');
 
 
 function acceuil(){
@@ -30,5 +30,18 @@ function deconnexion(){
 
 	require('Deconnexion.php');
 
+}
+
+function verifConnection(){
+	require('ConnexionVerif.php');
+
+	
+	}
+
+function modifAccount(){
+	require('ModificationAccountGeneral.php');
+}
+function modifPassword(){
+	require('ModificationAccountPassword.php');
 }
 ?>

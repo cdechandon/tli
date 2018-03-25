@@ -1,37 +1,95 @@
 <!-- Page HTML permettant a l'utilisateur de s'inscrire sur notre data basis-->
 
 <!DOCTYPE HTML>
-<HEAD>
-<title> page d inscription</title>
-	<link rel="stylesheet" type="text/css" href="print.css" media="print">
-    <link href="pageAcceuil.css" rel="stylesheet" type="text/css"/>
-</head>
 <html>
-<p>
+	<head>
+		<meta charset="utf-8" />
+		<title> page d inscription</title>
+		<link href='../css/inscription.css' type='text/css' rel='stylesheet' /> 
+	</head>
 
-    Veuillez rentrez les champs ci-dessous pour vous inscrire<br />
+	<body>
+	<p>
 
-    Veuillez taper :
+	    Veuillez rentrez les champs ci-dessous pour vous inscrire<br />
 
-</p>
 
-<!-- Formulaire d'inscription-->
-<form action="../php/VerifInscription.php" method="post">
 
-<p>
+	</p>
 
-	<input type="text" name="nom" placeholder="Rentrez votre nom" />{$InfoName}<br/>
-	<input type="text" name="prenom" placeholder="Rentrez votre prenom" />{$InfoFName}<br/>
-	<input type="text" name="pseudo" placeholder="Rentrez votre pseudo" />{$InfoPseudo}<br/>
-	<input type="text" name="mail" placeholder="Rentrez votre adresse mail"/>{$InfoMail}<br/>
-	<input type="password" name="password" placeholder="Mot de passe"/>{$InfoPassword}<br/>
+	<!-- Formulaire d'inscription-->
+	<form id="myForm" method="post" action="../php/VerifInscription.php" >
 
-    <input type="submit" value="Valider" />
 
-</p>
 
-<p><a href="../php/IndexAccueil.php">Acceuil</a><!-- Retour a l'accueil-->
-</p>
 
-</form>
+			<label class="form_col" for="lastName">Nom :</label>
+
+			<input name="lastName" id="lastName" type="text" placeholder="Rentrez votre nom" />
+
+			<span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+
+			<br /><br />
+
+			<label class="form_col" for="firstName">Prénom :</label>
+
+			<input name="firstName" id="firstName" type="text" placeholder="Rentrez votre prenom" />
+
+
+			<span class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
+
+			<br /><br />
+
+
+			<label class="form_col" for="login">Pseudo :</label> 
+
+			<input name="login" id="login" type="text" />{$InfoPseudo}
+
+			<span class="tooltip">Le pseudo ne peut pas faire moins de 4 caractères</span>
+
+			<br /><br />
+
+
+			<label class="form_col" for="mail">Mail :</label> 
+
+			<input name="mail" id="mail" type="text" /> {$InfoMail}
+
+			<span class="tooltip">L'adresse e mail doit etre valide</span>
+
+
+			<br /><br />
+	
+
+			<label class="form_col" for="pwd1">Mot de passe :</label>
+
+			<input name="pwd1" id="pwd1" type="password" />
+
+			<span class="tooltip">Le mot de passe ne doit pas faire moins de 6 caractères</span>
+
+
+			<br /><br />
+
+
+			<label class="form_col" for="pwd2">Mot de passe (confirmation) :</label>
+
+			<input name="pwd2" id="pwd2" type="password" />
+
+			<span class="tooltip">Le mot de passe de confirmation doit être identique à celui d'origine</span>
+
+			<br /><br />
+
+
+		    	<!--<span class="form_col"></span>-->
+
+			<input type="submit" value="M'inscrire" /> <input type="reset" value="Réinitialiser le formulaire" />
+
+
+
+		
+
+	</form>
+	<p><a href="../php/Index.php">Acceuil</a><!-- Retour a l'accueil-->
+		</p>
+	<script src="../javascript/inscription.js" type="text/javascript"></script>
+	</body>
 </html>

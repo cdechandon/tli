@@ -14,13 +14,11 @@ $tpl->assign('Mail', $resultat['mail']);
 
 $tpl->assign('Pseudo',$_SESSION['pseudo']);
 
-//require('../html/MyAccount.html');// On affiche la page utilisateur
 
 
 
 
-$tpl->assign('InfoName', "");
-$tpl->assign('InfoFName', "");
+// Ici par default les erreurs sont vides car lors de la premiere connection il n'y a aucune erreur
 $tpl->assign('InfoPseudo', "");
 $tpl->assign('InfoMail', "");
 $tpl->assign('InfoPassword', "");
@@ -34,10 +32,6 @@ if(isset($repMdp)){
 }
 if(isset($errorMail)){
 	$tpl->assign('InfoMail', $errorMail);}
-if(isset($errorName)){
-	$tpl->assign('InfoName', $errorName);}
-if(isset($errorFName)){
-	$tpl->assign('InfoFName', $errorFName);}
 if(isset($errorPseudo)){
 	$tpl->assign('InfoPseudo', $errorPseudo);}
 

@@ -1,6 +1,7 @@
 <?php
 // page php gerant l'accueil en MVC
 if(!isset($sessionExist)){
+
 $sessionExist=session_start();// ouverture session
 }
 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))// on indique a l'utilisateur s'il est connectee ou non
@@ -8,7 +9,8 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))// on indique a l'util
 {
 
     echo 'Bonjour ' . $_SESSION['pseudo'];
-
+	$_SESSION['mail'] = GetMail($_SESSION['pseudo'])[0];
+	
 }
 
 

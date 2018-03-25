@@ -1,5 +1,5 @@
  <?php
-require('model.php');
+//require('model.php');
 class Compte
 {
     private $_pseudo;

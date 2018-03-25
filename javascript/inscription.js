@@ -1,3 +1,4 @@
+// Pour creer ces fonctions nous nous sommes inspire des fonctions sur OPENCLASSROOM
 // Fonction de désactivation de l'affichage des "tooltips"
 
 function deactivateTooltips() {

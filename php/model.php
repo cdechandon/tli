@@ -136,6 +136,18 @@ $resultat = $req->fetch();
 return $resultat;
 }
 
+function GetMail($pseudo){
+$bdd = connexionDB();
+$req = $bdd->prepare('SELECT mail FROM InfoClient WHERE pseudo = :pseudo');
+
+$req->execute(array(
+
+    'pseudo' => $pseudo));
+
+$resultat = $req->fetch();
+return $resultat;
+}
+
 
 function PasswordModification($pseudo,$oldPassword,$newPassword){
 $bdd = connexionDB();

@@ -21,12 +21,13 @@ else
 {
 
     if ($resultsFinal[1]) {// $resultsFinal[1] contient true si le mdp indiquee est le meme que celui stocker
-
-        session_start();// ouverture d'une session
-
+       // ouverture d'une session
+	$sessionExist=session_start();
         $_SESSION['id'] = $resultsFinal[0]['id'];// celle-ci contient l'id dans le base de donnee(unique)
 
         $_SESSION['pseudo'] = $pseudo;// On lui donne aussi le pseudo de l'utilisateur
+	
+
 	require('IndexAccueil.php');
 
     }

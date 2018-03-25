@@ -1,3 +1,4 @@
+//Pour creer ce script nous nous sommes inspiree de ceux disponible sur OPENCLASSROM
 // Fonction de désactivation de l'affichage des "tooltips"
 
 function deactivateTooltips() {
