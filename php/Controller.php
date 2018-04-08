@@ -44,4 +44,11 @@ function modifAccount(){
 function modifPassword(){
 	require('ModificationAccountPassword.php');
 }
+function info(){
+	require('Info.php');
+}
+
+function patho(){
+	require('controller_liste_patho.php');
+}
 ?>

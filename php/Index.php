@@ -44,7 +44,13 @@ if (isset($_GET['action'])) {// si l'on veut etre rediriger on met dans action l
 	       		modifPassword();
 
 	}
-        
+	elseif ($_GET['action'] == 'info'){
+		info();
+	}
+        elseif($_GET['action'] == 'patho'){
+
+	patho();
+	}
 
 }
 

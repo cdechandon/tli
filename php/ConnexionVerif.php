@@ -13,6 +13,7 @@ if (!$resultsFinal[0]) // $resultsFinal[0] contient la ligne du tableau contenan
 {
 
     echo 'Mauvais identifiant ou mot de passe !';
+	require('IndexAccueil.php');
 
 }
 
@@ -35,6 +36,7 @@ else
     else {
 
         echo 'Mauvais identifiant ou mot de passe !';
+	require('IndexAccueil.php');
 
     }
 

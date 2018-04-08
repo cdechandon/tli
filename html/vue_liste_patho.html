@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+  <h1>Liste des pathologies</h1>
+    <p>Vous trouverez ci-dessous un tableau des différentes pathologies en acupuncture. N'hésitez pas à utiliser les filtres !</p>
+
+<form action="" method="post">
+
+	<p>Nom du meridien</p>
+	<select name="nom_meridien">
+	{foreach from=$liste_case_meridien item=case_meridien3}
+	<option value="{$case_meridien3}">{$case_meridien3}</option> </br>
+	{/foreach}
+	</select>
+
+	<p>Type de pathologie</p>
+	<select name="type_patho">
+	{foreach from=$liste_case_tp item=case_tp3}
+	<option value="{$case_tp3}">{$case_tp3}</option> </br>
+	{/foreach}
+	</select>
+
+	<p>Caracteristique</p>
+	<select name="carac">
+	{foreach from=$liste_case_c item=case_c3}
+	<option value="{$case_c3}">{$case_c3}</option> </br>
+	{/foreach}
+	</select>
+
+	
+	
+
+ <input type="submit">
+</form>
+</br>
+<form action="" method="post">
+
+	
+	<input type="submit" name="tout" value="Tout afficher" />
+</form>
+</br>
+{$barre_recherche}
+</br>
+
+
+<table>
+	{foreach from=$afficher item=ligne}
+	<tr> {$ligne} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_recherche item=ligne_r}
+	<tr> {$ligne_r} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_meridien item=meridien}
+	<tr> {$meridien} </tr> </br>
+	{/foreach}
+	
+	{foreach from=$afficher_type_patho item=tp}
+	<tr> {$tp} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_carac item=carac}
+	<tr> {$carac} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_mc item=mc}
+	<tr> {$mc} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_tpc item=tpc}
+	<tr> {$tpc} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_mtp item=mtp}
+	<tr> {$mtp} </tr> </br>
+	{/foreach}
+
+	{foreach from=$afficher_mtpc item=mtpc}
+	<tr> {$mtpc} </tr> </br>
+	{/foreach}
+</table>
+<a href="../php/Index.php">Acceuil</a><!-- Retour a l'accueil-->
+</body>
+</html>
