@@ -3,7 +3,14 @@ body {
     padding-top: 50px;
 }
    
-
+h1#top { /* Affichage du titre */
+  margin :0;
+  padding :0;
+  text-indent :0;
+  line-height :25pt;
+  font-size :25pt;
+color : blue;
+}
 .form_col {
 
     display: inline-block;
