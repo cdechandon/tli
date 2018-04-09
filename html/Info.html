@@ -17,7 +17,15 @@
         
         <div id="liste">
         <ul>
-        <li>Développements:</li>
+		<li>Objectifs:</li>
+<p>Le but de ce projet est de concevoir entièrement un site internet dynamique pour une association d’acupuncteurs tout en respectant un cahier des charges précis. On rappelle les principales fonctionnalités que doit proposer la plateforme en ligne :
+ <ul>1. Disposer d’un service en ligne leur permettant de consulter la liste des symptômes des principales pathologies en acupuncture </ul>
+ <ul>2. Pouvoir n’aﬃcher que certaines des pathologies en fonction de diﬀérents critères (type de pathologie, choix des méridiens1, etc.,)</ul>
+<ul>3. Rechercher les pathologies comportant certains symptômes. » 
+Ce site doit respecter les consignes de bonnes pratiques, être clair et détaillé de façon à le rendre réutilisable pour une éventuelle reprise du code.</ul>
+		</p>
+		
+		<li>Développements:</li>
         <p>     Pour realiser ce TP nous avons du apprendre a dynamiser notre site WEB avec AJAX comme en TLI d'annee 3 mais aussi avec une nouvelle technologie: PHP.
                 Le PHP s'execute cote serveur donc nous avons du utilise une technologie LAMPP pour pouvoir realiser notre site WEB. De plus nous avons eu a organiser notre site WEB,
                 nous avons donc choisi d'utiliser une architecture MVC (Model Vue Controlleur) pour separie les entites du site WEB.
@@ -27,6 +35,16 @@
                 Nous avons mis en place un routeur pour que l'utilisateur ne puisse acceder au site que par un seul point d'entree. Cela garantira une certaine securite du site WEB.
                 Pour ce qui concerne la vue de notre site WEB, nous avons utilisé SMARTY qui est un generateur de templates, cela permet de bien separer la vue du controlleur.
         
+<li>Structuration générale du site:</li>
+	(A ENLEVER APTRES Explication MVC, Smarty, routage ) 
+Le principe d’une structure MVC est de séparer le code contenant les données à afficher, l’interface graphique et la logique liée aux actions effectuées par l’utilisateur. Ainsi, nous avons mis en place cette méthode, en choisissant comme point d’entrée notre modèle de la page d’accueil qui s’occupera de rediriger chaque page et de gérer les correspondances entre les vues et controlleurs de celles-ci. C’est donc le modèle de la page d’accueil qui fera office de modèle pour nos autres pages.
+
+<li>MVC pour liste des pathologies:</li>
+<p>Modele-liste_patho.php : Connexion à la DB avec PDO, contient toutes les fonctions permettant de gérer les affichages de données (pathologies, méridiens, caractéristiques) précises et les données filtrées.  
+
+Vue_liste_patho.html : Gère ce que l’utilisateur voit afficher (toutes les pathologies d’un bloc puis des pathologies particulières en fonction de l’utilisation des filtres de la part de l’utilisateur) 
+
+Controller_liste_patho.php : Utilisation de smarty, traite les actions de l’utilisateur (modifie les données du modèle et de la vue en fonction e fonction de l’utilisation de tel ou tel filtre). </p>
         <li>Source:</li>
         <p>Tutos d'openclassroom : https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql</br>
         https://openclassrooms.com/courses/adoptez-une-architecture-mvc-en-php/creer-un-routeur</br>
