@@ -1,4 +1,8 @@
 # projet tli 4 A group écureuil
+Site Internet sur l'accupunture (médecine traditionnelle chinoise).
+
+
+
 Pour récupérer le projet rien de plus simple installer git sur votre poste puis
 dans un terminal écrire taper la commande suivante:
     git clone  https://github.com/cdechandon/tli.git
