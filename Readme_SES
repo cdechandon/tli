@@ -1,0 +1,67 @@
+Hello Mr.Holland,
+
+This is the project I have told you about in our interview.
+
+I was in charge of writting the "modele_liste_patho.php" and the "controller_liste_patho.php". 
+
+In the model, I have a method to create a PDO object to connect with database. I also have methods to have filtered researches,
+as "filtre_meridien()". It allows the user to filter his research with the name box he chose. 
+
+******************************************
+function filtre_meridien($nom_meridien){
+	$bdd=connexion_db(); //returns the connection with the DB
+	 $query= "SELECT `desc` FROM patho WHERE `desc` like '%" .$nom_meridien."%' "; //the query we used to get the data
+	  $result = $bdd->query($query); // execute the SQL query 
+    //it returns false if the query is not valid
+	$afficher_meridien=array(); //we will put the data into this array
+	if ($result!= false)
+	{
+	  while ($row=$result->fetch()) { //returns the next element of the $result object
+	    array_push($afficher_meridien,$row['desc']); //we push the appropriate information into the array  "$afficher_meridien"
+	
+		}
+	return $afficher_meridien;
+	}
+}
+*******************************************
+
+In the controller, I check what is in the http request variable and I call the appropriate method according to it.
+For example, if I only use the meridian filter, I would call the "filtre_meridien()" function:
+
+*******************************************
+else if  (isset($_POST['nom_meridien']) and $_POST['nom_meridien']!="rien") { //if the variable is not NULL and not equal to "rien" (="nothing" or "anything")
+$afficher_meridien_controller=filtre_meridien($_POST['nom_meridien']);
+}
+********************************************
+
+Then I assign the variable $afficher_meridien to another one which wiil be used in the view.
+
+*******************
+$smarty->assign('afficher_meridien_view', $afficher_meridien_controller);
+********************
+
+********************
+/*We display the view*/
+$smarty->display('../html/vue_liste_patho.html');
+********************
+
+
+I used Smarty (template engine) to bring the information from the controller to the view .
+
+****************
+<table>
+{foreach from=$afficher_meridien_view item=meridien}
+	<tr> {$meridien} </tr> </br> //Show the information that we picked up from the controller
+	{/foreach}
+</table>
+****************
+
+
+Thank you for your time.
+
+
+
+
+
+
+
